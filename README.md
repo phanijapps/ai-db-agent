@@ -6,7 +6,7 @@ The `bot.py` script provides a Streamlit-based user interface that allows users 
 
 ## Conceptual Overview
 
-![Conceptual Diagram](conceptual_diagram.png)
+![Conceptual Diagram](conceptual.png)
 
 ## Prerequisites
 Ensure you have the following installed before proceeding:
@@ -43,6 +43,8 @@ DB_NAME=chinook
 DB_USERNAME=postgres
 DB_PASSWORD=postgres
 ```
+*docs location* has markdown version of data dictionary which explains the table structure. I used ChatGPT to generate them by passing the SQL and then edited the documents.
+
 
 ### 3. Run the Streamlit Application
 Start the Streamlit UI by running:
