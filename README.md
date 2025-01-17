@@ -6,7 +6,7 @@ The `bot.py` script provides a Streamlit-based user interface that allows users 
 
 ## Conceptual Overview
 
-![Conceptual Diagram](conceptual_diagram.png)
+![Conceptual Diagram]()
 
 ## Prerequisites
 Ensure you have the following installed before proceeding:
