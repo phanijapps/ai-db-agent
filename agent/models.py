@@ -5,6 +5,7 @@ class ModelType:
     OPENAI = "openai"
     OLLAMA = "ollama"
     TRANSFORMERS = "transformers"
+    DEEPSEEK = "deepseek"
 
 MODEL_FACTORY = {
     ModelType.OPENAI: lambda model_id: LiteLLMModel(model_id),
@@ -12,7 +13,13 @@ MODEL_FACTORY = {
         model_id=model_id,
         api_base= os.getenv("OLLAMA_BASE_URL")
     ),
-    ModelType.TRANSFORMERS: lambda model_id: TransformersModel(model_id=model_id)
+    ModelType.TRANSFORMERS: lambda model_id: TransformersModel(model_id=model_id),
+    ModelType.DEEPSEEK: lambda model_id: LiteLLMModel(
+        model_id=model_id,
+        api_base= "https://api.deepseek.com",
+        api_key=os.getenv("DEEPSEEK_APIKEY")
+    ),
+
 }
 
 def get_model(model_type, model_id):
