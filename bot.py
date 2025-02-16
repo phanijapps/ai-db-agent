@@ -3,14 +3,14 @@ from agent.agentorch import AgentOrch
 from agent.models import get_model
 
 # Initialize the AgentOrch object
-orch = AgentOrch()
+orch = AgentOrch(max_steps=20)
 
 def main():
     st.title("🤖 Data Bot")
     st.write("🔍 Chat with your SQL Database")
     
     # Dropdown for model selection
-    model_options = {"openai": "gpt4o", "ollama": "ollama_chat/llama3.2", "transformers": "meta-llama/Llama-3.2-3B-Instruct"}
+    model_options = {"openai": "gpt4o", "ollama": "ollama_chat/qwq:latest", "transformers": "meta-llama/Llama-3.2-3B-Instruct","deepseek":"deepseek-chat"}
     selected_provider = st.sidebar.selectbox("Select Model Provider", list(model_options.keys()), index=0)
     
     # Prepopulate model ID based on selection
@@ -19,6 +19,7 @@ def main():
     
     # Call get_model function when selection changes
     if st.sidebar.button("Set Model"):
+        print(selected_provider)
         model = get_model(selected_provider, model_id)
         orch.set_model(model)
 
